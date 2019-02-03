@@ -2,7 +2,5 @@ extends layout.pug
  
 block content
   section#content
-    if name
-      h2 welcome #{name}
-      form(action='/goodbye', method='post')
-        button(type='sumbit') goodbye
+
+    a(href=`/cards`) cards
