@@ -30,8 +30,11 @@ router.get('/:id', (req, res) => {
   if (side == 'question') {
     templateData.hint = hint;
   }
-  res.render('card',templateData);
-
+//  res.render('card',templateData);
+  if (name) {
+      res.render('card', templateData);
+  }
+  else {res.redirect('/hello')};
 
 })
 module.exports = router;
