@@ -7,8 +7,12 @@ router.get('/:id', (req, res) => {
   const {id} = req.params;
   const text = cards[id][side];
   const {hint} = cards[id];
-  const templateData = {text,hint}
+  const templateData = {text}
+  if (side == 'question') {
+    templateData.hint = hint;
+  }
   res.render('card',templateData);
+
 
 })
 module.exports = router;
