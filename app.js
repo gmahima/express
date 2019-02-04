@@ -5,7 +5,13 @@ const cookieParser = require('cookie-parser');
 
 app.use(bodyParser.urlencoded({extended :false}));
 app.use(cookieParser());
-app.set('view engine', 'pug')
+app.use('/static', express.static('public'));
+app.set('view engine', 'pug');
+
+
+
+
+
 const mainRoutes = require('./routes')
 app.use(mainRoutes);
 const cardRoute = require('./routes/cards')
